@@ -1,0 +1,1 @@
+- [ ] Meaningful error message when Python 2 / 3 incompatible
