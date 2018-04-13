@@ -1,7 +1,7 @@
 PY :=cprofile2_top_funcs.py cprofile3_top_funcs.py
 PROF :=out2.prof out3.prof
 
-.PHONY : all profile clean $(PROF)
+.PHONY : all profile clean
 
 all : $(PY) $(PROF)
 	./cprofile2_top_funcs.py out2.prof
@@ -19,11 +19,11 @@ cprofile3_top_funcs.py : cprofile_top_funcs.py
 
 profile : $(PROF)
 
-out2.prof :
-	python2 -m cProfile -o $@ run.py
+out2.prof : run.py
+	python2 -m cProfile -o $@ $<
 
-out3.prof :
-	python3 -m cProfile -o $@ run.py
+out3.prof : run.py
+	python3 -m cProfile -o $@ $<
 
 clean :
 	rm -f -- $(PY) $(PROF)
