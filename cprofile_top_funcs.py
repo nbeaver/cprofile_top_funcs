@@ -1,4 +1,3 @@
-#! /usr/bin/env python
 import pstats
 import argparse
 import os.path
