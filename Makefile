@@ -25,5 +25,8 @@ out2.prof : run.py
 out3.prof : run.py
 	python3 -m cProfile -o $@ $<
 
+readme.html : readme.rst
+	rst2html $< $@
+
 clean :
-	rm -f -- $(PY) $(PROF)
+	rm -f -- $(PY) $(PROF) readme.html
